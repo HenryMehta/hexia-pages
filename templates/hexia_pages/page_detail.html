@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}{{ object.name }}{% endblock %}
+{% block description %}{{ object.name }} for {{ request.META.HTTP_HOST }} {% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {{ object.content|safe }}
+</div>
+{% endblock %}
