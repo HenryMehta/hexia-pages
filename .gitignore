@@ -6,4 +6,5 @@ db.sqlite3
 *.scss
 __pycache__/
 dist/
+build/
 hexia_pages.egg-info
