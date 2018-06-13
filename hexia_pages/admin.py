@@ -7,7 +7,7 @@ from hexia_pages.models import Page
 class PageAdmin(admin.ModelAdmin):
     list_display = ['name']
     ordering = ['name',]
-    #readonly_fields = ['name']
+    readonly_fields = ['slug']
 
     def get_actions(self, request):
         actions = super(PageAdmin, self).get_actions(request)
@@ -15,10 +15,10 @@ class PageAdmin(admin.ModelAdmin):
             del actions['delete_selected']
         return actions
     
-    #def has_delete_permission(self, request, obj=None):
+    def has_delete_permission(self, request, obj=None):
         return False
 
-    #def has_add_permission(self, request):
+    def has_add_permission(self, request):
         return False
         
 admin.site.register(Page, PageAdmin)
